@@ -34,6 +34,13 @@ type Transaction struct {
 	ProcessorResponseText      string               `xml:"processor-response-text,omitempty"`
 	ProcessorAuthorizationCode string               `xml:"processor-authorization-code,omitempty"`
 	SettlementBatchId          string               `xml:"settlement-batch-id,omitempty"`
+	//   <subscription-id>jqsydb</subscription-id>
+	SubscriptionID             string               `xml:"subscription-id,omitempty"`
+	//   <subscription>
+	//     <billing-period-end-date type="date">2013-11-06</billing-period-end-date>
+	//     <billing-period-start-date type="date">2013-10-07</billing-period-start-date>
+	//   </subscription>
+	Subscription               *Subscription        `xml:"subscription,omitempty"`
 }
 
 // TODO: not all transaction fields are implemented yet, here are the missing fields (add on demand)
